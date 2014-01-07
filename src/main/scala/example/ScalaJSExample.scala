@@ -6,6 +6,7 @@ import org.scalajs.dom.extensions._
 import org.scalajs.dom
 import org.scalajs.dom.WebSocket
 import org.scalajs.dom.MessageEvent
+import org.scalajs.dom.Event
 
 object ScalaJSExample {
 
@@ -23,6 +24,15 @@ object ScalaJSExample {
     p.innerHTML = s"<strong>${2 * 2}</storng>"
     target.innerHTML = ""
     target.appendChild(p)
+  }
+
+  def initWS() {
+    val ws = new dom.WebSocket("", "")
+    ws.onmessage = (x: MessageEvent) => {
+    	println(x.data)
+    }
+    ws.onopen = (x: Event) => {}
+    ws.onclose = (x:Event) => {}
   }
 
 }
