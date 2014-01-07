@@ -15,9 +15,13 @@ See README.md for detailed explanations.</p>
 <div id="playground">
 </div>
 
+<button onclick="ScalaJS.modules.example_ScalaJSExample().compute()">Click</button>
+
 <script type="text/javascript" src="./target/scala-2.10/example-extdeps.js"></script>
 <script type="text/javascript" src="./target/scala-2.10/example-intdeps.js"></script>
 <script type="text/javascript" src="./target/scala-2.10/example.js"></script>
-
+<script>
+ScalaJS.modules.example_ScalaJSExample().main();
+</script>
 </body>
 </html>

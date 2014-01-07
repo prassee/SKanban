@@ -1,17 +1,28 @@
 package example
 
-import scala.scalajs.js
-import js.Dynamic.{ global => g }
+import scala.scalajs.js._
+import scala.scalajs.js.Any._
+import org.scalajs.dom.extensions._
+import org.scalajs.dom
+import org.scalajs.dom.WebSocket
+import org.scalajs.dom.MessageEvent
 
 object ScalaJSExample {
+
+  val d = dom.document
+  val target = d.getElementById("playground")
+
   def main(): Unit = {
-    val paragraph = g.document.createElement("p")
-    paragraph.innerHTML = "<strong>It works!</strong>"
-    g.document.getElementById("playground").appendChild(paragraph)
+    val p = d.createElement("p")
+    p.innerHTML = "<strong>new content</storng>"
+    target.appendChild(p)
   }
 
-  /** Computes the square of an integer.
-   *  This demonstrates unit testing.
-   */
-  def square(x: Int): Int = x*x
+  def compute() = {
+    val p = d.createElement("p")
+    p.innerHTML = s"<strong>${2 * 2}</storng>"
+    target.innerHTML = ""
+    target.appendChild(p)
+  }
+
 }
