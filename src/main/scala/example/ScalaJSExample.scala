@@ -1,13 +1,16 @@
 package example
 
 import scala.scalajs.js.String
-
 import org.scalajs.dom
 import org.scalajs.dom.ErrorEvent
 import org.scalajs.dom.Event
 import org.scalajs.dom.HTMLInputElement
 import org.scalajs.dom.MessageEvent
+import org.scalajs.dom.CloseEvent
 
+/**
+ *
+ */
 object ScalaJSExample {
 
   val d = dom.document
@@ -29,8 +32,9 @@ object ScalaJSExample {
 
   def initWS() {
     ws.onmessage = (x: MessageEvent) => populate(x.data.toString())
-    ws.onopen = (x: Event) => ws.send("A message that consist of 39 characters" + "\r\n\r\n")
-    ws.onerror = (x: ErrorEvent) => Console.println("some erro has occured " + x.message)
+    ws.onopen = (x: Event) => {}
+    ws.onerror = (x: ErrorEvent) => Console.println("some error has occured " + x.message)
+    ws.onclose = (x: CloseEvent) => {}
   }
 
   def sendData() {
