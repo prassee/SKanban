@@ -6,22 +6,18 @@
 </head>
 <body>
 
-<h1>Example Scala.js application - development version</h1>
-
-<p>After having compiled and packaged properly the code for the application
-(using `sbt packageJS`), you should see "It works" herebelow.
-See README.md for detailed explanations.</p>
+<h1>Example Chat App</h1>
 
 <div id="playground">
 </div>
-
-<button onclick="ScalaJS.modules.example_ScalaJSExample().compute()">Click</button>
+<textarea rows=5 cols=30 id="chat"></textarea>
+<button onclick=ScalaJS.modules.example_ScalaJSExample().sendData()>Click</button>
 
 <script type="text/javascript" src="./target/scala-2.10/example-extdeps.js"></script>
-<script type="text/javascript" src="./target/scala-2.10/example-intdeps.js"></script>
-<script type="text/javascript" src="./target/scala-2.10/example.js"></script>
+<script type="text/javascript" src="./target/scala-2.10/simplegame-intdeps.js"></script>
+<script type="text/javascript" src="./target/scala-2.10/simplegame.js"></script>
 <script>
-ScalaJS.modules.example_ScalaJSExample().main();
+ScalaJS.modules.example_ScalaJSExample().initWS()
 </script>
 </body>
 </html>
