@@ -1,23 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Example Scala.js application</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
+    <head>
+        <title>Scala.js Kanban App</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
-<h1>Example Chat App</h1>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
 
-<div id="playground">
-</div>
-<textarea rows=5 cols=30 id="chat"></textarea>
-<button onclick=ScalaJS.modules.example_ScalaJSExample().sendData()>Click</button>
+    </head>
+    <body>
+        <!-- top navbar start -->
+        <nav class="navbar navbar-default" role="navigation">
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-comment"></span> &nbsp;
+                            <b>Scala.js Kanban App</b>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick=ScalaJS.modules.kanban_Kanban().createCard()>Data</a>
+                    </li>
+                    <li>
+                        <a href="#">Board</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!-- top navbar end -->
 
-<script type="text/javascript" src="./target/scala-2.10/example-extdeps.js"></script>
-<script type="text/javascript" src="./target/scala-2.10/simplegame-intdeps.js"></script>
-<script type="text/javascript" src="./target/scala-2.10/simplegame.js"></script>
-<script>
-ScalaJS.modules.example_ScalaJSExample().initWS()
-</script>
-</body>
+        <!-- center content start -->
+        <div class="container">
+
+            <!-- notify panel start --->
+            <div class="rows">
+
+                <!-- todo start -->
+                <div class="col-md-4">
+                    <h3>Todo</h3>
+                    <div id="todo">
+
+                    </div>
+                </div>
+                <!-- end -->
+
+                <!-- doing start -->
+                <div class="col-md-4">
+                    Doing
+                    <div id="doing">
+                        
+                    </div>
+                </div>
+                <!-- end -->
+
+                <!-- done start -->
+                <div class="col-md-4">
+                    Done
+                    <div id="done">
+                        
+                    </div>
+                </div>
+                <!-- end -->
+
+            </div>
+            <!-- end -->
+        </div>
+        <!-- end -->
+
+        <script type="text/javascript" src="./target/scala-2.10/scalajskanban-extdeps.js"></script>
+        <script type="text/javascript" src="./target/scala-2.10/scalajskanban-intdeps.js"></script>
+        <script type="text/javascript" src="./target/scala-2.10/scalajskanban.js"></script>
+    </body>
 </html>
