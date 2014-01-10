@@ -29,7 +29,6 @@ object Kanban {
     card.id = x._1
     card.innerHTML = s"<ol class='breadcrumb'><li class='active'><b> ${x._1} </b></li></ol>"
     card.ondblclick = (e: MouseEvent) => {
-      alert("dbl clicked")
       e.target
     }
     card.ondragstart = (e: DragEvent) => dragFn(e)

@@ -41,11 +41,8 @@
                         </h4>
                         <div class="well well-sm">
                             <h5>
-                                <b>
-                                    Add Card
-                                </b>
+                                <b>Add Card</b>
                             </h5>
-
                             <form role="form" id="addcard">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Card Name</label>
@@ -54,9 +51,11 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Description</label>
                                     <textarea class="form-control" rows="3" id="cdesc"
-                                              placeholder="Enter what is the task about, define DoD"></textarea>
+                                              placeholder="Enter what is the task about, define DoD">
+                                    </textarea>
                                 </div>
-                                <a href="#" class="btn btn-info" onclick=ScalaJS.modules.kanban_Kanban().createCard()>
+                                <a href="#" class="btn btn-info btn-small" 
+                                   onclick=ScalaJS.modules.kanban_Kanban().createCard()>
                                     Create
                                 </a>
                             </form>    
@@ -66,9 +65,15 @@
                     <div class="col-md-9">
                         <div class="row">
                             <div class="row">
-                                <div class="col-md-4"><h3><span class="label label-default">Todo</span></h3></div>
-                                <div class="col-md-4"><h3><span class="label label-primary">Doing</span></h3></div>
-                                <div class="col-md-4"><h3><span class="label label-success">Done</span></h3></div>
+                                <div class="col-md-4">
+                                    <h3><span class="label label-default">Todo</span></h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <h3><span class="label label-primary">Doing</span></h3>
+                                </div>
+                                <div class="col-md-4">
+                                    <h3><span class="label label-success">Done</span></h3>
+                                </div>
                             </div>
                             <div class="clearfix"></div>
                             <!-- board start --->
