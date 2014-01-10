@@ -7,68 +7,88 @@
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="http://getbootstrap.com/dist/css/bootstrap.css">
 
+        <style>
+            body {
+                background-color: #eee;
+            }
+
+            .box {
+                border: 1px solid blueviolet;
+                min-height: 50px;
+            }
+
+            .lane {
+                background: antiquewhite;
+                min-height: 50px;
+            }
+
+            .side {
+                background: azure;
+                border: 1px solid blueviolet;
+            }
+        </style>
     </head>
     <body>
-        <!-- top navbar start -->
-        <nav class="navbar navbar-default" role="navigation">
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active">
-                        <a href="#">
-                            <span class="glyphicon glyphicon-comment"></span> &nbsp;
-                            <b>Scala.js Kanban App</b>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" onclick=ScalaJS.modules.kanban_Kanban().createCard()>Data</a>
-                    </li>
-                    <li>
-                        <a href="#">Board</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <!-- top navbar end -->
 
         <!-- center content start -->
         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-3">
+                        <h2>
+                            <span class="label label-info">
+                                <span class="glyphicon glyphicon-comment">
+                                </span> SKanban
+                            </span>
+                        </h2>
+                        <div class="well well-sm">
+                            <h5>
+                                <b>
+                                    Add Card
+                                </b>
+                            </h5>
 
-            <!-- notify panel start --->
-            <div class="rows">
+                            <form role="form" id="addcard">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Card Name</label>
+                                    <input class="form-control" id="cname" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Description</label>
+                                    <textarea class="form-control" rows="3" id="cdesc"
+                                              placeholder="Enter what is the task about, define DoD"></textarea>
+                                </div>
+                                <button class="btn btn-default" 
+                                        onclick=ScalaJS.modules.kanban_Kanban().createCard()>
+                                    Create
+                                </button>
+                            </form>    
 
-                <!-- todo start -->
-                <div class="col-md-4">
-                    <h3>Todo</h3>
-                    <div id="todo">
+                        </div>
+                    </div>                
 
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="row">
+                                <div class="col-md-4"><h3><span class="label label-default">Todo</span></h3></div>
+                                <div class="col-md-4"><h3><span class="label label-primary">Doing</span></h3></div>
+                                <div class="col-md-4"><h3><span class="label label-success">Done</span></h3></div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <!-- board start --->
+                            <div class="row">
+                                <div id="board">
+
+                                </div>
+                            </div>
+                            <!-- end -->
+                        </div>
                     </div>
-                </div>
-                <!-- end -->
 
-                <!-- doing start -->
-                <div class="col-md-4">
-                    Doing
-                    <div id="doing">
-                        
-                    </div>
                 </div>
-                <!-- end -->
-
-                <!-- done start -->
-                <div class="col-md-4">
-                    Done
-                    <div id="done">
-                        
-                    </div>
-                </div>
-                <!-- end -->
-
             </div>
-            <!-- end -->
         </div>
         <!-- end -->
-
         <script type="text/javascript" src="./target/scala-2.10/scalajskanban-extdeps.js"></script>
         <script type="text/javascript" src="./target/scala-2.10/scalajskanban-intdeps.js"></script>
         <script type="text/javascript" src="./target/scala-2.10/scalajskanban.js"></script>
