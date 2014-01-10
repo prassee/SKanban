@@ -6,7 +6,6 @@
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
-
         <style>
             body {
                 background-color: #eee;
@@ -29,18 +28,17 @@
         </style>
     </head>
     <body>
-
         <!-- center content start -->
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-3">
-                        <h2>
+                        <h4>
                             <span class="label label-info">
                                 <span class="glyphicon glyphicon-comment">
                                 </span> SKanban
                             </span>
-                        </h2>
+                        </h4>
                         <div class="well well-sm">
                             <h5>
                                 <b>
@@ -58,12 +56,10 @@
                                     <textarea class="form-control" rows="3" id="cdesc"
                                               placeholder="Enter what is the task about, define DoD"></textarea>
                                 </div>
-                                <button class="btn btn-default" 
-                                        onclick=ScalaJS.modules.kanban_Kanban().createCard()>
+                                <a href="#" class="btn btn-info" onclick=ScalaJS.modules.kanban_Kanban().createCard()>
                                     Create
-                                </button>
+                                </a>
                             </form>    
-
                         </div>
                     </div>                
 
@@ -78,13 +74,11 @@
                             <!-- board start --->
                             <div class="row">
                                 <div id="board">
-
                                 </div>
                             </div>
                             <!-- end -->
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
