@@ -10,13 +10,16 @@ object Kanban {
     console.log("app initiated")
     val cols = List("todo", "doing", "done")
     cols.foreach(col => {
-      val lane = d.createElement("div")
-      lane.id = col
-      lane.className = "col-md-4 lane"
-      lane.innerHTML = "<br/>"
-      lane.ondrop = (de: DragEvent) => ColumnEventHandlers.onDropFn(de)
-      lane.ondragover = (de: DragEvent) => ColumnEventHandlers.ondragover(de)
-      d.getElementById("board").appendChild(lane)
+      val outerCol = d.createElement("div")
+      outerCol.className = "col-md-4"
+      outerCol.innerHTML = s"<h3><span class='label label-default'>${col}</span></h3>"
+      val innerCol = d.createElement("div")
+      innerCol.id = col
+      innerCol.className = "breadcrumb lane"
+      innerCol.ondrop = (de: DragEvent) => ColumnEventHandlers.onDropFn(de)
+      innerCol.ondragover = (de: DragEvent) => ColumnEventHandlers.ondragover(de)
+      outerCol.appendChild(innerCol)
+      d.getElementById("board").appendChild(outerCol)
     })
   }
 
@@ -24,20 +27,20 @@ object Kanban {
     val x = ((d.getElementById("cname").asInstanceOf[HTMLInputElement]).value,
       (d.getElementById("cdesc").asInstanceOf[HTMLInputElement]).value)
     val card = d.createElement("div")
-    card.className = "thumbnail"
+    card.className = "breadcrumb"
     card.draggable = true
     card.id = x._1
-    card.innerHTML = s"<ol class='breadcrumb'><li class='active'><b> ${x._1} </b></li></ol>"
+    // card.innerHTML = s"<ol class='breadcrumb'><li class='active'><b> ${x._1} </b></li></ol>"
     card.ondblclick = (e: MouseEvent) => {
       e.target
     }
     card.ondragstart = (e: DragEvent) => dragFn(e)
     val content = d.createElement("div")
     content.className = "caption"
-    content.innerHTML = s"<p><small>${x._2}</small></p>"
+    content.innerHTML = s"<p>${x._2}</p>"
     card.appendChild(content)
     d.getElementById("todo").appendChild(card)
-    }
+  }
 
   def dragFn(de: DragEvent) = {
     val targetId = (de.target.asInstanceOf[HTMLElement]).id

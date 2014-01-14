@@ -1,21 +1,93 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Example Scala.js application</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-</head>
-<body>
+    <head>
+        <title>Scala.js Kanban App</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                background-color: #cccccc;
+            }
 
-<h1>Example Scala.js application - optimized version</h1>
+            .box {
+                border: 3px solid #245269;
+                min-height: 50px;
+            }
 
-<p>After having compiled and optimized properly the code for the application
-(using `sbt optimizeJS`), you should see "It works" herebelow.
-See README.md for detailed explanations.</p>
+            .lane {
+                background: #c9e2b3;
+                min-height: 50px;
+            }
 
-<div id="playground">
-</div>
+            .side {
+                background: azure;
+                border: 1px solid blueviolet;
+            }
 
-<script type="text/javascript" src="./target/scala-2.10/example-opt.js"></script>
+            .label-logo {
+                background: #31b0d5;
+            }
 
-</body>
+            .board {
+                background: #dcdcdc;
+            }
+
+            .logo-fon{
+                margin: 0.15em 0;
+                font-size: 2.5em;
+                text-align: center;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="row" id="board">
+                        <div class="col-md-4 breadcrumb lane" >
+                            <h4><span class="label label-default">Todo</span></h4>
+                        </div>
+                        <div class="col-md-4 breadcrumb lane">
+                            <h4><span class="label label-info">Doing</span></h4>
+                        </div>
+                        <div class="col-md-4 breadcrumb lane">
+                            <h4><span class="label label-success">Done</span></h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- sidebar start -->
+                <div class="col-md-3">
+                    <div class="board breadcrumb">
+                        <p class="logo-fon">    
+                            <span class="label label-logo box">
+                                <span class="glyphicon glyphicon-list-alt"></span> SKanban
+                            </span>
+                        </p>
+                        <br>
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Card Name</label>
+                                <input class="form-control" id="cname" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Description</label>
+                                <textarea class="form-control" rows="3" id="cdesc"
+                                          placeholder="Enter what is the task about, define DoD">
+                                </textarea>
+                            </div>
+                            <a href="#" class="btn btn-info btn-small" 
+                               onclick=ScalaJS.modules.kanban_Kanban().createCard()>
+                                Create
+                            </a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="./target/scala-2.10/scalajskanban-extdeps.js"></script>
+        <script type="text/javascript" src="./target/scala-2.10/scalajskanban-intdeps.js"></script>
+        <script type="text/javascript" src="./target/scala-2.10/scalajskanban.js"></script>
+    </body>
 </html>

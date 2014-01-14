@@ -2,92 +2,92 @@
 <html>
     <head>
         <title>Scala.js Kanban App</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-
-        <!-- Latest compiled and minified CSS -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <style>
             body {
-                background-color: #eee;
+                background-color: #cccccc;
             }
 
             .box {
-                border: 1px solid blueviolet;
+                border: 3px solid #a94442;
                 min-height: 50px;
             }
 
             .lane {
-                background: antiquewhite;
-                min-height: 50px;
+                background: #31b0d5;
+                min-height: 500px;
+                border: 3px solid #a94442;
             }
 
             .side {
                 background: azure;
-                border: 1px solid blueviolet;
+                border: 2px solid blueviolet;
+            }
+
+            .label-logo {
+                background: #31b0d5;
+            }
+
+            .board {
+                background: #dcdcdc;
+            }
+
+            .logo-fon{
+                margin: 0.15em 0;
+                font-size: 2.5em;
+                text-align: center;
             }
         </style>
     </head>
     <body>
-        <!-- center content start -->
         <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <div class="col-md-3">
-                        <h4>
-                            <span class="label label-info">
-                                <span class="glyphicon glyphicon-comment">
-                                </span> SKanban
+                <div class="col-md-9">
+                    <div class="row" id="board">
+                    </div>
+                </div>
+                <!-- sidebar start -->
+                <div class="col-md-3">
+                    <div class="board breadcrumb">
+                        <p class="logo-fon">    
+                            <span class="label label-logo box">
+                                <span class="glyphicon glyphicon-comment"></span> SKanban
                             </span>
-                        </h4>
-                        <div class="well well-sm">
-                            <h5>
-                                <b>Add Card</b>
-                            </h5>
-                            <form role="form" id="addcard">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Card Name</label>
-                                    <input class="form-control" id="cname" placeholder="Enter email">
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Description</label>
-                                    <textarea class="form-control" rows="3" id="cdesc"
-                                              placeholder="Enter what is the task about, define DoD">
-                                    </textarea>
-                                </div>
-                                <a href="#" class="btn btn-info btn-small" 
-                                   onclick=ScalaJS.modules.kanban_Kanban().createCard()>
-                                    Create
-                                </a>
-                            </form>    
+                        </p>
+                        <p>
+                            Simple <b>Kanban</b> in <b>scala.js</b>
+                        </p>
+                        <!--
+                        <div class="btn-group btn-group-justified">
+                            <a href="#" class="btn btn-danger">card</a>
+                            <a href="#" class="btn btn-danger">board</a>
+                            <a href="#" class="btn btn-danger">settings</a>
                         </div>
-                    </div>                
-
-                    <div class="col-md-9">
-                        <div class="row">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <h3><span class="label label-default">Todo</span></h3>
-                                </div>
-                                <div class="col-md-4">
-                                    <h3><span class="label label-primary">Doing</span></h3>
-                                </div>
-                                <div class="col-md-4">
-                                    <h3><span class="label label-success">Done</span></h3>
-                                </div>
+                        -->
+                        <form role="form">
+                            <h4><span class='label label-danger'>Create Card</span></h4>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Card Name</label>
+                                <input class="form-control" id="cname" placeholder="Enter email">
                             </div>
-                            <div class="clearfix"></div>
-                            <!-- board start --->
-                            <div class="row">
-                                <div id="board">
-                                </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Description</label>
+                                <textarea class="form-control" rows="3" id="cdesc"
+                                          placeholder="Enter what is the task about, define DoD">
+                                </textarea>
                             </div>
-                            <!-- end -->
-                        </div>
+                            <a href="#" class="btn btn-info btn-small" 
+                               onclick=ScalaJS.modules.kanban_Kanban().createCard()>
+                                Create
+                            </a>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- end -->
         <script type="text/javascript" src="./target/scala-2.10/scalajskanban-extdeps.js"></script>
         <script type="text/javascript" src="./target/scala-2.10/scalajskanban-intdeps.js"></script>
         <script type="text/javascript" src="./target/scala-2.10/scalajskanban.js"></script>
