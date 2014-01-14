@@ -8,7 +8,7 @@ object Kanban {
 
   def main(): Unit = {
     console.log("app initiated")
-    val cols = List("todo", "doing", "done")
+    val cols = List("Todo", "Doing", "Done")
     cols.foreach(col => {
       val outerCol = d.createElement("div")
       outerCol.className = "col-md-4"
