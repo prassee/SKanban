@@ -30,27 +30,28 @@ object Kanban {
     card.className = "breadcrumb"
     card.draggable = true
     card.id = x._1
-    // card.innerHTML = s"<ol class='breadcrumb'><li class='active'><b> ${x._1} </b></li></ol>"
-    card.ondblclick = (e: MouseEvent) => {
-      e.target
-    }
-    card.ondragstart = (e: DragEvent) => dragFn(e)
+    card.ondblclick = (e: MouseEvent) => e.target
+    card.ondragstart = (e: DragEvent) => ColumnEventHandlers.dragFn(e)
     val content = d.createElement("div")
     content.className = "caption"
     content.innerHTML = s"<p>${x._2}</p>"
     card.appendChild(content)
     d.getElementById("Todo").appendChild(card)
   }
+  
+}
+
+/**
+ * 
+ */
+object ColumnEventHandlers {
 
   def dragFn(de: DragEvent) = {
     val targetId = (de.target.asInstanceOf[HTMLElement]).id
     console.log(s"there is a drag from id ${targetId}")
     de.dataTransfer.setData("Text", targetId)
   }
-}
-
-object ColumnEventHandlers {
-
+  
   def onDropFn(de: DragEvent) = {
     val id = de.dataTransfer.getData("Text")
     (de.target.asInstanceOf[HTMLDivElement]).appendChild(Kanban.d.getElementById(id))
