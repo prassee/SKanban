@@ -39,7 +39,7 @@ object Kanban {
     content.className = "caption"
     content.innerHTML = s"<p>${x._2}</p>"
     card.appendChild(content)
-    d.getElementById("todo").appendChild(card)
+    d.getElementById("Todo").appendChild(card)
   }
 
   def dragFn(de: DragEvent) = {

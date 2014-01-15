@@ -1,4 +1,3 @@
-
 package kanban
 
 import org.scalajs.dom
@@ -20,7 +19,6 @@ object Conversion {
 
 class TaskSaver {
     import Conversion.toTask
-
     def doStuff {
         KVPStorage.saveTask("fasdfs", "asdfas")
     }
