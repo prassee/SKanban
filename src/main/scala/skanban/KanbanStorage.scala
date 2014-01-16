@@ -6,14 +6,11 @@ import org.scalajs.dom._
 object SKanbanStorage {
 
     def saveLane(file: java.io.File, contents: String) {
-        println(file)
         import java.io.FileWriter
         val fw = new FileWriter(file, false)
-        println(contents)
         fw.write(contents)
         fw.close()
     }
-
 }
 
 case class Task(name: String, desc: String)
@@ -23,10 +20,11 @@ object Conversion {
     implicit def fromTask(task: Task) = (task.name, task.desc)
     import java.io.File
     implicit def laneNameToFile(lane: String): File =
-        new File(s"/home/prasanna/skanban/default/${lane}")
+        new File(s"/home/prasanna/skanban/default/${lane}.txt")
 }
 
 object TaskSaver extends App {
     import Conversion._
-    SKanbanStorage.saveLane("todo.txt", "asfsadf")
+    import java.util.Date
+    SKanbanStorage.saveLane("todo", "asfsadf" + new Date())
 }
