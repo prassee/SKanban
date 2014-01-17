@@ -8,7 +8,7 @@ object SKanban {
     var srcLane = ""
     var destLane = ""
     def main(): Unit = {
-        console.log("app initiated")
+        val x = window.localStorage
         val cols = List("Todo", "Doing", "Done")
         cols.foreach(col => {
             val outerCol = d.createElement("div")
@@ -19,10 +19,10 @@ object SKanban {
             innerCol.className = "breadcrumb lane"
             innerCol.ondrop = (de: DragEvent) => {
                 destLane = (de.target.asInstanceOf[HTMLDivElement]).id
-                console.log(s"dest lane  ${destLane}")
                 ColumnEventHandlers.onDropFn(de, srcLane, destLane)
             }
             innerCol.ondragover = (de: DragEvent) => ColumnEventHandlers.ondragover(de)
+            // innerCol.innerHTML = (x(col)).toString
             outerCol.appendChild(innerCol)
             d.getElementById("board").appendChild(outerCol)
         })
@@ -39,7 +39,6 @@ object SKanban {
         card.ondragstart = (e: DragEvent) => {
             val par = (e.target.asInstanceOf[HTMLDivElement]).id
             srcLane = document.getElementById(par).parentElement.id
-            console.log(s"soruce lance ${srcLane}")
             ColumnEventHandlers.dragFn(e)
         }
         val content = d.createElement("div")
@@ -55,7 +54,6 @@ object ColumnEventHandlers {
 
     def dragFn(de: DragEvent) = {
         val targetId = (de.target.asInstanceOf[HTMLElement]).id
-        console.log(s"there is a drag from id ${targetId}")
         de.dataTransfer.setData("Text", targetId)
     }
 
@@ -64,7 +62,7 @@ object ColumnEventHandlers {
         (de.target.asInstanceOf[HTMLDivElement]).appendChild(SKanban.d.getElementById(id))
         // import skanban.Conversion._
         SKanbanStorage.saveToStorage(slane, document.getElementById(slane).innerHTML)
-        SKanbanStorage.saveToStorage(slane, document.getElementById(dlane).innerHTML)
+        SKanbanStorage.saveToStorage(dlane, document.getElementById(dlane).innerHTML)
         document.getElementById(dlane).innerHTML
     }
 

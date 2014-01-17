@@ -2,9 +2,11 @@ package skanban
 
 import org.scalajs.dom
 import org.scalajs.dom._
+import scala.scalajs.js
 
 object SKanbanStorage {
-    val appstorage:Storage = localStorage
+    val appstorage = window.localStorage
+
     def saveLane(file: java.io.File, contents: String) {
         import java.io.FileWriter
         val fw = new FileWriter(file, false)
@@ -13,8 +15,12 @@ object SKanbanStorage {
     }
 
     def saveToStorage(key: String, data: String) {
-        // appstorage(0)
-        val path = this.getClass.getResource(s"/default/${key}.txt").getPath()
+        console.log(s"value in  ${key} is ${data}")
+        appstorage.update(key, data)
+        console.log(s"")
+        console.log(s"todo has ${appstorage("Todo")}")
+        console.log(s"doing has ${appstorage("Doing")}")
+        console.log(s"done has ${appstorage("Done")}")
     }
 }
 
@@ -27,7 +33,6 @@ object Conversion {
     implicit def laneNameToFile(lane: String): File = {
         console.log(s"${lane}")
         val path = this.getClass.getResource(s"/default/${lane}.txt").getPath()
-        // "/home/prasanna/skanban/default/${lane}.txt"
         new File(path)
     }
     import org.scalajs.dom

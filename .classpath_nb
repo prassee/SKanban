@@ -5,16 +5,16 @@
   <classpathentry kind="src" path="src/test/scala" output="target/scala-2.10/test-classes" scope="test" managed="false"/>
   <classpathentry kind="src" path="src/test/java" output="target/scala-2.10/test-classes" scope="test" managed="false"/>
   <classpathentry kind="src" path="target/scala-2.10/src_managed/test" output="target/scala-2.10/test-classes" scope="test" managed="true"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.10.2-sources.jar" kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-library.jar" scope="compile"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-library_2.10/srcs/scalajs-library_2.10-0.2-sources.jar" kind="lib" path="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-library_2.10/jars/scalajs-library_2.10-0.2.jar" scope="compile"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang/scala-compiler/srcs/scala-compiler-2.10.2-sources.jar" kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-compiler.jar" scope="compile"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.10.2-sources.jar" kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-reflect.jar" scope="compile"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-dom_2.10/srcs/scalajs-dom_2.10-0.1-SNAPSHOT-sources.jar" kind="lib" path="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-dom_2.10/jars/scalajs-dom_2.10-0.1-SNAPSHOT.jar" scope="compile"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang/scala-library/srcs/scala-library-2.10.2-sources.jar" kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-library.jar" scope="test"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-library_2.10/srcs/scalajs-library_2.10-0.2-sources.jar" kind="lib" path="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-library_2.10/jars/scalajs-library_2.10-0.2.jar" scope="test"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang/scala-compiler/srcs/scala-compiler-2.10.2-sources.jar" kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-compiler.jar" scope="test"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang/scala-reflect/srcs/scala-reflect-2.10.2-sources.jar" kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-reflect.jar" scope="test"/>
-  <classpathentry sourcepath="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-dom_2.10/srcs/scalajs-dom_2.10-0.1-SNAPSHOT-sources.jar" kind="lib" path="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-dom_2.10/jars/scalajs-dom_2.10-0.1-SNAPSHOT.jar" scope="test"/>
+  <classpathentry kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-library.jar" scope="compile"/>
+  <classpathentry kind="lib" path="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-library_2.10/jars/scalajs-library_2.10-0.2.jar" scope="compile"/>
+  <classpathentry kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-compiler.jar" scope="compile"/>
+  <classpathentry kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-reflect.jar" scope="compile"/>
+  <classpathentry kind="lib" path="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-dom_2.10/jars/scalajs-dom_2.10-0.1-SNAPSHOT.jar" scope="compile"/>
+  <classpathentry kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-library.jar" scope="test"/>
+  <classpathentry kind="lib" path="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-library_2.10/jars/scalajs-library_2.10-0.2.jar" scope="test"/>
+  <classpathentry kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-compiler.jar" scope="test"/>
+  <classpathentry kind="lib" path="/home/prasanna/.sbt/boot/scala-2.10.2/lib/scala-reflect.jar" scope="test"/>
+  <classpathentry kind="lib" path="/home/prasanna/.ivy2/cache/org.scala-lang.modules.scalajs/scalajs-dom_2.10/jars/scalajs-dom_2.10-0.1-SNAPSHOT.jar" scope="test"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="output" path="bin"/>
 </classpath>
