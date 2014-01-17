@@ -1,4 +1,4 @@
-<classpath name="scalaJSKanban" id="scalajskanban">
+<classpath name="skanban" id="scalajskanban">
   <classpathentry kind="src" path="src/main/scala" output="target/scala-2.10/classes" scope="compile" managed="false"/>
   <classpathentry kind="src" path="src/main/java" output="target/scala-2.10/classes" scope="compile" managed="false"/>
   <classpathentry kind="src" path="target/scala-2.10/src_managed/main" output="target/scala-2.10/classes" scope="compile" managed="true"/>

@@ -1,1 +1,1 @@
-ScalaJS.modules.kanban_Kanban().main();
+ScalaJS.modules.skanban_SKanban().main();
