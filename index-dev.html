@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        
+
         <style>
             body {
                 background-color: #cccccc;
@@ -58,33 +58,50 @@
                                 <span class="glyphicon glyphicon-comment"></span> SKanban
                             </span>
                         </p>
+
                         <p>
                             Simple <b>Kanban</b> in <b>scala.js</b>
                         </p>
-                        <!--
-                        <div class="btn-group btn-group-justified">
-                            <a href="#" class="btn btn-danger">card</a>
-                            <a href="#" class="btn btn-danger">board</a>
-                            <a href="#" class="btn btn-danger">settings</a>
+
+                        <!-- Tabs -->
+                        <ul class="nav nav-tabs" id="myTab">
+                            <li><a href="#card" data-toggle="tab">Card</a></li>
+                            <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane active" id="card">
+                                <form role="form">
+                                    <h4><span class='label label-danger'>Create Card</span></h4>
+                                    <div class="form-group">
+                                        <label for="cname">Card Name</label>
+                                        <input class="form-control" id="cname" placeholder="Enter email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cdesc">Description</label>
+                                        <textarea class="form-control" rows="3" id="cdesc"
+                                                  placeholder="Enter what is the task about, define DoD">
+                                        </textarea>
+                                    </div>
+                                    <a href="#" class="btn btn-info btn-small" 
+                                       onclick=ScalaJS.modules.skanban_SKanban().createCard()>
+                                        Create
+                                    </a>
+                                </form>
+                            </div>
+                            <div class="tab-pane" id="settings">
+                                <form class="form">
+                                    <h4><span class='label label-danger'>Clear Board</span></h4>
+                                    <div class="form-group">
+                                    <a href="#" class="btn btn-danger btn-tiny" 
+                                       onclick=ScalaJS.modules.skanban_SKanban().clearBoard()>
+                                        Clear
+                                    </a>
+                                    </div>
+                                </form>
+
+                            </div>
                         </div>
-                        -->
-                        <form role="form">
-                            <h4><span class='label label-danger'>Create Card</span></h4>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Card Name</label>
-                                <input class="form-control" id="cname" placeholder="Enter email">
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1">Description</label>
-                                <textarea class="form-control" rows="3" id="cdesc"
-                                          placeholder="Enter what is the task about, define DoD">
-                                </textarea>
-                            </div>
-                            <a href="#" class="btn btn-info btn-small" 
-                               onclick=ScalaJS.modules.skanban_SKanban().createCard()>
-                                Create
-                            </a>
-                        </form>
                     </div>
                 </div>
             </div>
@@ -92,5 +109,12 @@
         <script type="text/javascript" src="./target/scala-2.10/skanban-extdeps.js"></script>
         <script type="text/javascript" src="./target/scala-2.10/skanban-intdeps.js"></script>
         <script type="text/javascript" src="./target/scala-2.10/skanban.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script>
+                                       $(function() {
+                                           $('#myTab').tab('show')
+                                       })
+        </script>
     </body>
 </html>
