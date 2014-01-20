@@ -38,11 +38,7 @@ object SKanbanStorage {
 
 }
 
-case class Task(name: String, desc: String)
-
 object Conversion {
-    implicit def toTask(name: (String, String)): Task = Task(name._1, name._2)
-    implicit def fromTask(task: Task) = (task.name, task.desc)
     import java.io.File
     implicit def laneNameToFile(lane: String): File = {
         val path = this.getClass.getResource(s"/default/${lane}.txt").getPath()

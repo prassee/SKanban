@@ -32,7 +32,7 @@ object SKanban {
             outerCol.appendChild(innerCol)
             d.getElementById("board").appendChild(outerCol)
         })
-    
+
         cols.foreach(col => restoreBoards(col))
     }
 
@@ -51,7 +51,6 @@ object SKanban {
         card.draggable = true
         card.id = title
         card.innerHTML = title
-        card.ondblclick = (e: MouseEvent) => e.target
         card.ondragstart = (e: DragEvent) => {
             val par = (e.target.asInstanceOf[HTMLDivElement]).id
             srcLane = document.getElementById(par).parentElement.id
@@ -59,7 +58,11 @@ object SKanban {
         }
         val content = d.createElement("div")
         content.className = "caption hid"
-        content.innerHTML = s"<p>${title}</p>"
+        content.innerHTML = s"<p>${desc}</p>"
+        card.ondblclick = (e: MouseEvent) => {
+            alert(content.innerHTML)
+            e.target
+        }
         card.appendChild(content)
         d.getElementById(lane).appendChild(card)
     }
