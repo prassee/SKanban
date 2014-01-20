@@ -22,7 +22,7 @@ object SKanban {
             
             val outerCol = d.createElement("div")
             outerCol.className = "panel panel-info"
-            outerCol.innerHTML = s"<div class='panel-heading'><h3 class='panel-title'>${col}</h3></div>"
+            outerCol.innerHTML = s"<div class='panel-heading'><h3 class='panel-title'><b>${col}</b></h3></div>"
             val innerCol = d.createElement("div")
             innerCol.id = col
             innerCol.className = "panel-body lane"
