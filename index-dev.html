@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Scala.js Kanban App</title>
+        <title>SKanban</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -80,22 +80,30 @@
                                               placeholder="Enter what is the task about, define DoD">
                                     </textarea>
                                 </div>
-                                <a href="#" class="btn btn-info btn-small" 
+                                <a href="#" class="btn btn-info btn-xs" 
                                    onclick=ScalaJS.modules.skanban_SKanban().createCard()>
                                     Create
                                 </a>
-                                <a href="#" class="btn btn-danger btn-tiny" 
-                                   onclick=ScalaJS.modules.skanban_SKanban().clearBoard()>
-                                    Clear Board
-                                </a>
+                                <a href="#" class="btn btn-danger btn-xs" 
+                               onclick=ScalaJS.modules.skanban_SKanban().clearBoard()>
+                                Clear Board
+                            </a>
                             </form>                                
                         </div>
                         <div class="panel-footer">
-                            <h4>Done with</h4>
-                            <h5>
-                                <b><a href="https://github.com/prassee/SKanban">SKanban</a></b> , 
-                                <b><a href="http://scala-js.org">Scala.js</a></b> 
-                            </h5>
+                            <p><b>Done with</b></p>
+                            <ul>
+                                <li><b><a href="https://github.com/prassee/SKanban">SKanban</a></b></li>
+                                <li><b><a href="http://scala-js.org">Scala.js</a></b> </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <h4 class="panel-title small"><b>Archives</b></h4>
+                        </div>
+                        <div class="panel-body">
+
                         </div>
                     </div>
                 </div>
@@ -106,10 +114,5 @@
         <script type="text/javascript" src="./target/scala-2.10/skanban.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script>
-                                       $(function() {
-                                           $('#myTab').tab('show')
-                                       })
-        </script>
     </body>
 </html>
