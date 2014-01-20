@@ -16,4 +16,4 @@ I am working on the following features
 
 * archive a card 
 * support for more than one board
-* cutomizable lanes (other than 'Todo','Doing','Done')
+* cutomizable lanes (other than 'Todo', 'Doing', 'Done')
