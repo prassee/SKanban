@@ -17,12 +17,15 @@ object SKanban {
      */
     def main(): Unit = {
         cols.foreach(col => {
+            val panelDiv = d.createElement("div") 
+            panelDiv.className = "col-md-4"
+            
             val outerCol = d.createElement("div")
-            outerCol.className = "col-md-4"
-            outerCol.innerHTML = s"<h3><span class='label label-default'>${col}</span></h3>"
+            outerCol.className = "panel panel-info"
+            outerCol.innerHTML = s"<div class='panel-heading'><h3 class='panel-title'>${col}</h3></div>"
             val innerCol = d.createElement("div")
             innerCol.id = col
-            innerCol.className = "breadcrumb lane"
+            innerCol.className = "panel-body lane"
             innerCol.ondrop = (de: DragEvent) => {
                 destLane = (de.target.asInstanceOf[HTMLDivElement]).id
                 ColumnEventHandlers.onDropFn(de, srcLane, destLane)
@@ -30,7 +33,8 @@ object SKanban {
             innerCol.ondragover = (de: DragEvent) => ColumnEventHandlers.ondragover(de)
             // innerCol.innerHTML = (x(col)).toString
             outerCol.appendChild(innerCol)
-            d.getElementById("board").appendChild(outerCol)
+            panelDiv.appendChild(outerCol)
+            d.getElementById("board").appendChild(panelDiv)
         })
 
         cols.foreach(col => restoreBoards(col))
@@ -71,6 +75,8 @@ object SKanban {
         val x = ((d.getElementById("cname").asInstanceOf[HTMLInputElement]).value,
             (d.getElementById("cdesc").asInstanceOf[HTMLInputElement]).value)
         addCardToBoard(x._1, x._2, "Todo")
+        (d.getElementById("cname").asInstanceOf[HTMLInputElement]).value = ""
+        (d.getElementById("cdesc").asInstanceOf[HTMLInputElement]).value = ""
     }
 
     def clearBoard {

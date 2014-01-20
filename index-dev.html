@@ -18,9 +18,7 @@
             }
 
             .lane {
-                background: #31b0d5;
                 min-height: 500px;
-                border: 3px solid #a94442;
             }
 
             .side {
@@ -41,11 +39,11 @@
                 font-size: 2.5em;
                 text-align: center;
             }
-            
+
             .hid {
                 display: none;
             }
-            
+
             .sho {
                 display: block;
             }
@@ -54,65 +52,48 @@
     <body>
         <div class="container">
             <div class="row">
+                &nbsp;
+            </div>
+            <div class="row">
                 <div class="col-md-9">
                     <div class="row" id="board">
                     </div>
                 </div>
                 <!-- sidebar start -->
                 <div class="col-md-3">
-                    <div class="board breadcrumb">
+                    <div class="panel panel-default">
                         <p class="logo-fon">    
                             <span class="label label-logo box">
                                 <span class="glyphicon glyphicon-comment"></span> SKanban
                             </span>
                         </p>
+                        <div class="panel-body">
+                            <form role="form">
+                                <h4><span class='label label-success'>Create Card</span></h4>
+                                <div class="form-group">
+                                    <label for="cname">Card Name</label>
+                                    <input class="form-control" id="cname" placeholder="Enter email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="cdesc">Description</label>
+                                    <textarea class="form-control" rows="3" id="cdesc"
+                                              placeholder="Enter what is the task about, define DoD">
+                                    </textarea>
+                                </div>
+                                <a href="#" class="btn btn-info btn-small" 
+                                   onclick=ScalaJS.modules.skanban_SKanban().createCard()>
+                                    Create
+                                </a>
+                                <a href="#" class="btn btn-danger btn-tiny" 
+                                   onclick=ScalaJS.modules.skanban_SKanban().clearBoard()>
+                                    Clear Board
+                                </a>
+                            </form>
 
-                        <p>
-                            Simple <b>Kanban</b> in <b>scala.js</b>
-                        </p>
-
-                        <!-- Tabs -->
-                        <ul class="nav nav-tabs" id="myTab">
-                            <li><a href="#card" data-toggle="tab">Card</a></li>
-                            <li><a href="#settings" data-toggle="tab">Settings</a></li>
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div class="tab-pane active" id="card">
-                                <form role="form">
-                                    <h4><span class='label label-danger'>Create Card</span></h4>
-                                    <div class="form-group">
-                                        <label for="cname">Card Name</label>
-                                        <input class="form-control" id="cname" placeholder="Enter email">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cdesc">Description</label>
-                                        <textarea class="form-control" rows="3" id="cdesc"
-                                                  placeholder="Enter what is the task about, define DoD">
-                                        </textarea>
-                                    </div>
-                                    <a href="#" class="btn btn-info btn-small" 
-                                       onclick=ScalaJS.modules.skanban_SKanban().createCard()>
-                                        Create
-                                    </a>
-                                </form>
-                            </div>
-                            <div class="tab-pane" id="settings">
-                                <form class="form">
-                                    <h4><span class='label label-danger'>Clear Board</span></h4>
-                                    <div class="form-group">
-                                    <a href="#" class="btn btn-danger btn-tiny" 
-                                       onclick=ScalaJS.modules.skanban_SKanban().clearBoard()>
-                                        Clear
-                                    </a>
-                                    </div>
-                                </form>
-
-                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>           
         </div>
         <script type="text/javascript" src="./target/scala-2.10/skanban-extdeps.js"></script>
         <script type="text/javascript" src="./target/scala-2.10/skanban-intdeps.js"></script>
@@ -120,9 +101,9 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script>
-            $(function() {
-                $('#myTab').tab('show')
-            })
+                                           $(function() {
+                                               $('#myTab').tab('show')
+                                           })
         </script>
     </body>
 </html>
