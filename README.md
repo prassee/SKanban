@@ -1,5 +1,5 @@
 ## SKanban
-Simple Kanban system developed using Scala.js.
+Simple __Kanban__ system developed using __Scala.js__.
 ![SKanban](https://dl.dropboxusercontent.com/u/10783650/skanbanlatest.png "SKanban")
 
 ##### Currently Implemented Features
@@ -20,5 +20,5 @@ I am working on the following features
 * markdown editor support for card 'Description'
 * double click on any card would show panel to edit card details
 * customizable lanes (other than 'To-do', 'Doing', 'Done').
-* colored cards to represent priority.
+* colored cards to represent priority. (__done__)
 * tagged cards

@@ -17,9 +17,9 @@ object SKanban {
      */
     def main(): Unit = {
         cols.foreach(col => {
-            val panelDiv = d.createElement("div") 
+            val panelDiv = d.createElement("div")
             panelDiv.className = "col-md-4"
-            
+
             val outerCol = d.createElement("div")
             outerCol.className = "panel panel-info"
             outerCol.innerHTML = s"<div class='panel-heading'><h3 class='panel-title'><b>${col}</b></h3></div>"
@@ -44,14 +44,14 @@ object SKanban {
         val cards = localstore(lane).toString.split("\n")
         cards.foreach { card =>
             val cardDetail = card.split(":")
-            addCardToBoard(cardDetail(0), cardDetail(1), lane)
+            addCardToBoard(cardDetail(0), cardDetail(1),cardDetail(2), lane)
             console.log(s"${lane} -> ${cardDetail(0)} , ${cardDetail(1)}")
         }
     }
 
-    def addCardToBoard(title: String, desc: String, lane: String) {
+    def addCardToBoard(title: String, desc: String, prio: String, lane: String) {
         val card = d.createElement("div")
-        card.className = "breadcrumb"
+        card.className = s"breadcrumb ${prio}"
         card.draggable = true
         card.id = title
         card.innerHTML = title
@@ -72,9 +72,11 @@ object SKanban {
     }
 
     def createCard() {
+        val u = (d.getElementById("imp").asInstanceOf[HTMLSelectElement]).value
         val x = ((d.getElementById("cname").asInstanceOf[HTMLInputElement]).value,
-            (d.getElementById("cdesc").asInstanceOf[HTMLInputElement]).value)
-        addCardToBoard(x._1, x._2, "Todo")
+            (d.getElementById("cdesc").asInstanceOf[HTMLInputElement]).value,
+            (d.getElementById("imp").asInstanceOf[HTMLSelectElement]).value)
+        addCardToBoard(x._1, x._2, x._3, "Todo")
         (d.getElementById("cname").asInstanceOf[HTMLInputElement]).value = ""
         (d.getElementById("cdesc").asInstanceOf[HTMLInputElement]).value = ""
     }

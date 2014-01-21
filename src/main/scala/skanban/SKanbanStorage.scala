@@ -27,6 +27,7 @@ object SKanbanStorage {
             buffer.append("{")
             buffer.append((j.children(0).asInstanceOf[HTMLDivElement]).innerHTML)
             buffer.append("}")
+            buffer.append(s":${j.classList.apply(1)}")
             buffer.append("\n")
         }
         console.log(buffer.toString)
